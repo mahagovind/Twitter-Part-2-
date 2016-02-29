@@ -23,6 +23,8 @@
 		101872931C8385B600109F57 /* ProfileViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101872921C8385B600109F57 /* ProfileViewCell.swift */; };
 		101872951C83B12000109F57 /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101872941C83B12000109F57 /* AccountCell.swift */; };
 		101872971C83B1A600109F57 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101872961C83B1A600109F57 /* AccountViewController.swift */; };
+		1018729B1C84124C00109F57 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1018729A1C84124C00109F57 /* MenuViewController.swift */; };
+		1018729D1C84150300109F57 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1018729C1C84150300109F57 /* HamburgerViewController.swift */; };
 		61221A5857216A0A6BE7EB35 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 330EC9AB3C553DCFDFBE52FB /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,8 @@
 		101872921C8385B600109F57 /* ProfileViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewCell.swift; sourceTree = "<group>"; };
 		101872941C83B12000109F57 /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
 		101872961C83B1A600109F57 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		1018729A1C84124C00109F57 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		1018729C1C84150300109F57 /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 		1AC50EDF0E860B7A375E0EA4 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		330EC9AB3C553DCFDFBE52FB /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +102,8 @@
 				101872901C82E9FB00109F57 /* ProfileViewController.swift */,
 				101872941C83B12000109F57 /* AccountCell.swift */,
 				101872961C83B1A600109F57 /* AccountViewController.swift */,
+				1018729A1C84124C00109F57 /* MenuViewController.swift */,
+				1018729C1C84150300109F57 /* HamburgerViewController.swift */,
 			);
 			path = Twitter;
 			sourceTree = "<group>";
@@ -270,6 +276,8 @@
 				10029C631C7ABD37006A3AA5 /* ComposeViewController.swift in Sources */,
 				10029C581C795EA6006A3AA5 /* User.swift in Sources */,
 				101872971C83B1A600109F57 /* AccountViewController.swift in Sources */,
+				1018729D1C84150300109F57 /* HamburgerViewController.swift in Sources */,
+				1018729B1C84124C00109F57 /* MenuViewController.swift in Sources */,
 				101872911C82E9FB00109F57 /* ProfileViewController.swift in Sources */,
 				10029C5F1C7A8EF3006A3AA5 /* TweetCell.swift in Sources */,
 				10029C5A1C795EB9006A3AA5 /* Tweet.swift in Sources */,

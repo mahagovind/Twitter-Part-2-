@@ -22,9 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userlogoutNotification, object: nil)
         if User.currentUser != nil {
              print("current user detected : \(User.currentUser!.name)")
-            window?.rootViewController =  storyboard.instantiateViewControllerWithIdentifier("myTabController")
-                as! UITabBarController
+//            window?.rootViewController =  storyboard.instantiateViewControllerWithIdentifier("myTabController")
+//                as! UITabBarController
+            
         }
+          let menuvc = storyboard.instantiateViewControllerWithIdentifier("MenuViewController") as! MenuViewController
+        let hvc = window?.rootViewController as! HamburgerViewController
+       hvc.mvc = storyboard.instantiateViewControllerWithIdentifier("myTabController") as! UITabBarController
+        hvc.menuvc = menuvc
+        menuvc.hvc = hvc
         return true
     }
     
