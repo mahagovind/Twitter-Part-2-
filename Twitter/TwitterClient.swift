@@ -51,7 +51,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     func getUserProfileDetails(params: String?, completion: (tweets: User?, error : NSError?) -> ()) {
         var url = "1.1//users/show.json?screen_name=\(params)"
         GET("1.1//users/show.json?screen_name=\(params!)", parameters: nil, success: { (session:NSURLSessionDataTask!,response:AnyObject?) -> Void in
-            print("Profile Values\(response)")
+         //   print("Profile Values\(response)")
             let user = User(dict: response as! NSDictionary!)
              completion(tweets: user, error : nil)
            
@@ -62,7 +62,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     }
     func homeTimelineWithParams(params: String?, completion: (tweets: [Tweet]?, error : NSError?) -> ()) {
         GET("1.1/statuses/home_timeline.json", parameters: nil, success: { (session:NSURLSessionDataTask!,response:AnyObject?) -> Void in
-              print("\(response)")
+            //  print("\(response)")
             let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
             completion(tweets: tweets, error : nil)
             }, failure: { (session:NSURLSessionDataTask?, error:NSError) -> Void in
@@ -72,7 +72,7 @@ class TwitterClient: BDBOAuth1SessionManager {
     }
     func userFavourites(params: String?, completion: (tweets: [Tweet]?, error : NSError?) -> ()) {
         GET("1.1/favorites/list.json?screen_name=\(params!)", parameters: nil, success: { (session:NSURLSessionDataTask!,response:AnyObject?) -> Void in
-             print("\(response)")
+            // print("\(response)")
             let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
             completion(tweets: tweets, error : nil)
             }, failure: { (session:NSURLSessionDataTask?, error:NSError) -> Void in
@@ -92,9 +92,9 @@ class TwitterClient: BDBOAuth1SessionManager {
     }
 
     
-    func userMedia(params: NSDictionary?, completion: (tweets: [Tweet]?, error : NSError?) -> ()) {
-        GET("1.1/statuses/home_timeline.json", parameters: nil, success: { (session:NSURLSessionDataTask!,response:AnyObject?) -> Void in
-          //  print("\(response)")
+    func userMedia(params: String?, completion: (tweets: [Tweet]?, error : NSError?) -> ()) {
+        GET("1.1//search/tweets.json?q=from%3Agoogle%20since%3A2012-01-31%20filter%3Aimages&include_entities=true", parameters: nil, success: { (session:NSURLSessionDataTask!,response:AnyObject?) -> Void in
+           print("\(response)")
             let tweets = Tweet.tweetsWithArray(response as! [NSDictionary])
             completion(tweets: tweets, error : nil)
             }, failure: { (session:NSURLSessionDataTask?, error:NSError) -> Void in

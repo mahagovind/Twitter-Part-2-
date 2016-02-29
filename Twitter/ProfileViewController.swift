@@ -23,6 +23,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     var user = User.currentUser
     override func viewDidLoad() {
         super.viewDidLoad()
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"load", object: nil)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 120
         
@@ -46,6 +47,16 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+    }
+    
+    func loadList(notification: NSNotification){
+        //load data here
+        viewDidLoad()
+        self.tableView.reloadData()
+    }
+    
     func setTweets()
     {
         TwitterClient.sharedInstance.userTweets(user?.screenName!) { (tweets, error) -> () in
@@ -58,6 +69,14 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     func longPressed(sender: UILongPressGestureRecognizer)
     {
         print("longpressed")
+      //  self.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext;
+
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("AccountViewController") as! AccountViewController
+        vc.view.backgroundColor = UIColor.clearColor()
+        vc.view.opaque = false
+        vc.modalPresentationStyle = UIModalPresentationStyle.OverCurrentContext;
+        self.presentViewController(vc, animated: true, completion: nil)
+            
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,10 +97,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
                 self.tweets = tweets
                 self.tableView.reloadData()
             }
-            
-        }else if(control.selectedSegmentIndex == 1){
-            
-        }else {
+        }
+        else {
             TwitterClient.sharedInstance.userFavourites(user?.screenName!) { (tweets, error) -> () in
                 self.tweets = tweets
                 self.tableView.reloadData()
